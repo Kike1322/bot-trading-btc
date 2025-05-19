@@ -1,0 +1,31 @@
+name: Ejecutar bot cada hora
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Cada hora
+  workflow_dispatch:     # Permite ejecutarlo manualmente desde GitHub
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v3
+
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+
+      - name: Instalar dependencias
+        run: |
+          pip install -r requirements.txt
+
+      - name: Crear archivo settings.json
+        run: |
+          echo '${{ secrets.SETTINGS_JSON }}' > settings.json
+
+      - name: Ejecutar script
+        run: |
+          python main.py
