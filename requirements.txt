@@ -1,4 +1,3 @@
 pandas
-numpy
-ta-lib
-requests
+ta
+ccxt
