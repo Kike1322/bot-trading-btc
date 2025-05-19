@@ -163,3 +163,57 @@ Traceback (most recent call last):
   File "C:\Users\arque\miniconda3\envs\trading\Lib\smtplib.py", line 662, in auth
     raise SMTPAuthenticationError(code, resp)
 smtplib.SMTPAuthenticationError: (534, b'5.7.9 Application-specific password required. For more information, go to\n5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor 5b1f17b1804b1-442f3951b57sm217791305e9.21 - gsmtp')
+Directorio actual: C:\Users\arque\Desktop\Python\Trading
+Contenido de la carpeta actual: ['.git', 'alertas_email2.py', 'capital_manager.py', 'data.py', 'ejecutar_trading.bat', 'ejecutar_trading.txt', 'historial_trading.csv', 'logger.py', 'log_trading.txt', 'main.py', 'settings.json', 'strategy.py', 'test_email.py', 'trader.py', '__pycache__']
+Señal generada: hold
+No se ejecutó ninguna orden (hold).
+
+    Capital actual: 20.00 USDT
+    Colchón: 0.00 USDT
+    Ganancia retirada: 0.00 USDT
+    
+Directorio actual: C:\Users\arque\Desktop\Python\Trading
+Contenido de la carpeta actual: ['.git', 'alertas_email2.py', 'capital_manager.py', 'data.py', 'ejecutar_trading.bat', 'ejecutar_trading.txt', 'historial_trading.csv', 'logger.py', 'log_trading.txt', 'main.py', 'settings.json', 'strategy.py', 'trader.py', '__pycache__']
+Señal generada: hold
+No se ejecutó ninguna orden (hold).
+
+    Capital actual: 20.00 USDT
+    Colchón: 0.00 USDT
+    Ganancia retirada: 0.00 USDT
+    
+Directorio actual: C:\Users\arque\Desktop\Python\Trading
+Contenido de la carpeta actual: ['.git', 'alertas_email2.py', 'capital_manager.py', 'data.py', 'ejecutar_trading.bat', 'ejecutar_trading.txt', 'historial_trading.csv', 'logger.py', 'log_trading.txt', 'main.py', 'settings.json', 'strategy.py', 'trader.py', '__pycache__']
+Señal generada: hold
+No se ejecutó ninguna orden (hold).
+
+    Capital actual: 20.00 USDT
+    Colchón: 0.00 USDT
+    Ganancia retirada: 0.00 USDT
+    
+Directorio actual: C:\Users\arque\Desktop\Python\Trading
+Contenido de la carpeta actual: ['.git', 'alertas_email2.py', 'capital_manager.py', 'data.py', 'ejecutar_trading.bat', 'ejecutar_trading.txt', 'historial_trading.csv', 'logger.py', 'log_trading.txt', 'main.py', 'settings.json', 'strategy.py', 'trader.py', '__pycache__']
+Señal generada: hold
+No se ejecutó ninguna orden (hold).
+
+    Capital actual: 20.00 USDT
+    Colchón: 0.00 USDT
+    Ganancia retirada: 0.00 USDT
+    
+Directorio actual: C:\Users\arque\Desktop\Python\Trading
+Contenido de la carpeta actual: ['.git', 'alertas_email2.py', 'capital_manager.py', 'data.py', 'ejecutar_trading.bat', 'ejecutar_trading.txt', 'historial_trading.csv', 'logger.py', 'log_trading.txt', 'main.py', 'settings.json', 'strategy.py', 'trader.py', '__pycache__']
+Señal generada: hold
+No se ejecutó ninguna orden (hold).
+
+    Capital actual: 20.00 USDT
+    Colchón: 0.00 USDT
+    Ganancia retirada: 0.00 USDT
+    
+Directorio actual: C:\Users\arque\Desktop\Python\Trading
+Contenido de la carpeta actual: ['.git', 'alertas_email2.py', 'capital_manager.py', 'data.py', 'ejecutar_trading.bat', 'ejecutar_trading.txt', 'historial_trading.csv', 'logger.py', 'log_trading.txt', 'main.py', 'settings.json', 'strategy.py', 'trader.py', '__pycache__']
+Señal generada: hold
+No se ejecutó ninguna orden (hold).
+
+    Capital actual: 20.00 USDT
+    Colchón: 0.00 USDT
+    Ganancia retirada: 0.00 USDT
+    
