@@ -1,0 +1,165 @@
+Directorio actual: C:\Users\arque\Desktop\Python\Trading
+Contenido de la carpeta actual: ['alertas_email2.py', 'capital_manager.py', 'data.py', 'ejecutar_trading.bat', 'ejecutar_trading.txt', 'logger.py', 'log_trading.txt', 'main.py', 'settings.json', 'strategy.py', 'test_email.py', 'trader.py', '__pycache__']
+Señal generada: hold
+No se ejecutó ninguna orden (hold).
+
+    Capital actual: 20.00 USDT
+    Colchón: 0.00 USDT
+    Ganancia retirada: 0.00 USDT
+    
+Directorio actual: C:\Users\arque\Desktop\Python\Trading
+Contenido de la carpeta actual: ['alertas_email2.py', 'capital_manager.py', 'data.py', 'ejecutar_trading.bat', 'ejecutar_trading.txt', 'historial_trading.csv', 'logger.py', 'log_trading.txt', 'main.py', 'settings.json', 'strategy.py', 'test_email.py', 'trader.py', '__pycache__']
+Traceback (most recent call last):
+  File "C:\Users\arque\miniconda3\envs\trading\Lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arque\miniconda3\envs\trading\Lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arque\miniconda3\envs\trading\Lib\socket.py", line 974, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\arque\miniconda3\envs\trading\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arque\miniconda3\envs\trading\Lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\arque\miniconda3\envs\trading\Lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\arque\miniconda3\envs\trading\Lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\arque\miniconda3\envs\trading\Lib\site-packages\urllib3\connection.py", line 704, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "C:\Users\arque\miniconda3\envs\trading\Lib\site-packages\urllib3\connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x000001E4D5BDC0D0>: Failed to resolve 'api.binance.com' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\arque\miniconda3\envs\trading\Lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\arque\miniconda3\envs\trading\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arque\miniconda3\envs\trading\Lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.binance.com', port=443): Max retries exceeded with url: /api/v3/exchangeInfo (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001E4D5BDC0D0>: Failed to resolve 'api.binance.com' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\arque\miniconda3\envs\trading\Lib\site-packages\ccxt\base\exchange.py", line 555, in fetch
+    response = self.session.request(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arque\miniconda3\envs\trading\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arque\miniconda3\envs\trading\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arque\miniconda3\envs\trading\Lib\site-packages\requests\adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.binance.com', port=443): Max retries exceeded with url: /api/v3/exchangeInfo (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001E4D5BDC0D0>: Failed to resolve 'api.binance.com' ([Errno 11001] getaddrinfo failed)"))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\arque\Desktop\Python\Trading\main.py", line 17, in <module>
+    df = get_btc_data()
+         ^^^^^^^^^^^^^^
+  File "C:\Users\arque\Desktop\Python\Trading\data.py", line 6, in get_btc_data
+    bars = exchange.fetch_ohlcv('BTC/USDT', timeframe='1h', limit=100)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arque\miniconda3\envs\trading\Lib\site-packages\ccxt\binance.py", line 4446, in fetch_ohlcv
+    self.load_markets()
+  File "C:\Users\arque\miniconda3\envs\trading\Lib\site-packages\ccxt\base\exchange.py", line 1517, in load_markets
+    markets = self.fetch_markets(params)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arque\miniconda3\envs\trading\Lib\site-packages\ccxt\binance.py", line 3040, in fetch_markets
+    promisesRaw.append(self.publicGetExchangeInfo(params))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arque\miniconda3\envs\trading\Lib\site-packages\ccxt\base\types.py", line 35, in unbound_method
+    return _self.request(self.path, self.api, self.method, params, config=self.config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arque\miniconda3\envs\trading\Lib\site-packages\ccxt\binance.py", line 11336, in request
+    response = self.fetch2(path, api, method, params, headers, body, config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arque\miniconda3\envs\trading\Lib\site-packages\ccxt\base\exchange.py", line 4462, in fetch2
+    raise e
+  File "C:\Users\arque\miniconda3\envs\trading\Lib\site-packages\ccxt\base\exchange.py", line 4453, in fetch2
+    return self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arque\miniconda3\envs\trading\Lib\site-packages\ccxt\base\exchange.py", line 608, in fetch
+    raise NetworkError(details) from e
+ccxt.base.errors.NetworkError: binance GET https://api.binance.com/api/v3/exchangeInfo
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\arque\Desktop\Python\Trading\main.py", line 51, in <module>
+    enviar_alerta_email(
+  File "C:\Users\arque\Desktop\Python\Trading\alertas_email2.py", line 14, in enviar_alerta_email
+    with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arque\miniconda3\envs\trading\Lib\smtplib.py", line 1050, in __init__
+    SMTP.__init__(self, host, port, local_hostname, timeout,
+  File "C:\Users\arque\miniconda3\envs\trading\Lib\smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arque\miniconda3\envs\trading\Lib\smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arque\miniconda3\envs\trading\Lib\smtplib.py", line 1056, in _get_socket
+    new_socket = super()._get_socket(host, port, timeout)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arque\miniconda3\envs\trading\Lib\smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arque\miniconda3\envs\trading\Lib\socket.py", line 839, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arque\miniconda3\envs\trading\Lib\socket.py", line 974, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+Directorio actual: C:\Users\arque\Desktop\Python\Trading
+Contenido de la carpeta actual: ['alertas_email2.py', 'capital_manager.py', 'data.py', 'ejecutar_trading.bat', 'ejecutar_trading.txt', 'historial_trading.csv', 'logger.py', 'log_trading.txt', 'main.py', 'settings.json', 'strategy.py', 'test_email.py', 'trader.py', '__pycache__']
+Señal generada: hold
+No se ejecutó ninguna orden (hold).
+
+    Capital actual: 20.00 USDT
+    Colchón: 0.00 USDT
+    Ganancia retirada: 0.00 USDT
+    
+Traceback (most recent call last):
+  File "C:\Users\arque\Desktop\Python\Trading\main.py", line 40, in <module>
+    log_trade(
+  File "C:\Users\arque\Desktop\Python\Trading\logger.py", line 9, in log_trade
+    with open(filename, mode='a', newline='') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'historial_trading.csv'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\arque\Desktop\Python\Trading\main.py", line 51, in <module>
+    enviar_alerta_email(
+  File "C:\Users\arque\Desktop\Python\Trading\alertas_email2.py", line 15, in enviar_alerta_email
+    smtp.login(email_address, email_password)
+  File "C:\Users\arque\miniconda3\envs\trading\Lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Users\arque\miniconda3\envs\trading\Lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+                   ^^^^^^^^^^
+  File "C:\Users\arque\miniconda3\envs\trading\Lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (534, b'5.7.9 Application-specific password required. For more information, go to\n5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor 5b1f17b1804b1-442f3951b57sm217791305e9.21 - gsmtp')
