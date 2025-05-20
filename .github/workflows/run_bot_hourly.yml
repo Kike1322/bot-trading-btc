@@ -3,7 +3,7 @@ name: Ejecutar bot cada hora
 on:
   schedule:
     - cron: '0 * * * *'  # Cada hora
-  workflow_dispatch:     # Permite ejecutarlo manualmente desde GitHub
+  workflow_dispatch:
 
 jobs:
   run-bot:
@@ -20,12 +20,11 @@ jobs:
 
       - name: Instalar dependencias
         run: |
+          pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Crear archivo settings.json
-        run: |
-          echo '${{ secrets.SETTINGS_JSON }}' > settings.json
-
       - name: Ejecutar script
-        run: |
-          python main.py
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+          API_SECRET: ${{ secrets.API_SECRET }}
+        run: python main.py
