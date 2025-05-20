@@ -8,7 +8,7 @@ from logger import log_trade
 
 import os
 print("Contenido de la carpeta actual:", os.listdir())
-from alertas_email2 import enviar_alerta_email
+#from alertas_email2 import enviar_alerta_email
 
 
 try:
@@ -47,10 +47,10 @@ try:
         resultado=beneficio
     )
 
-except Exception as e:
-    enviar_alerta_email(
-        asunto="Error crítico en Bot Trading",
-        mensaje=f"Ha ocurrido un error: {e}",
-        to_email="kikecumpiandiaz@gmail.com"
-    )
-    raise
+#except Exception as e:
+  #  enviar_alerta_email(
+ #       asunto="Error crítico en Bot Trading",
+ #       mensaje=f"Ha ocurrido un error: {e}",
+  #      to_email="kikecumpiandiaz@gmail.com"
+   # )
+   # raise
