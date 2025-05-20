@@ -1,17 +1,19 @@
 import ccxt
-import json
+import os
 
 def ejecutar_operacion(signal):
-    with open("settings.json") as f:
-        config = json.load(f)
+    # Leer claves desde variables de entorno
+    api_key = os.getenv("API_KEY")
+    api_secret = os.getenv("API_SECRET")
+    paper_mode = os.getenv("PAPER_MODE", "True").lower() == "true"  # por si quieres controlar esto también
 
     exchange = ccxt.binance({
-        'apiKey': config["apiKey"],
-        'secret': config["secret"],
+        'apiKey': api_key,
+        'secret': api_secret,
         'enableRateLimit': True
     })
 
-    exchange.set_sandbox_mode(config.get("paper_mode", True))
+    exchange.set_sandbox_mode(paper_mode)
 
     symbol = 'BTC/USDT'
     amount = 0.001
