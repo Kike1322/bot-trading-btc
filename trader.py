@@ -2,15 +2,14 @@ import ccxt
 import os
 
 def ejecutar_operacion(signal):
-    # Leer claves desde variables de entorno
     api_key = os.getenv("API_KEY")
     api_secret = os.getenv("API_SECRET")
-    paper_mode = os.getenv("PAPER_MODE", "True").lower() == "true"  # por si quieres controlar esto también
+    paper_mode = os.getenv("PAPER_MODE", "True").lower() == "true"
 
-    exchange = ccxt.binance({
+    exchange = ccxt.bybit({
         'apiKey': api_key,
         'secret': api_secret,
-        'enableRateLimit': True
+        'enableRateLimit': True,
     })
 
     exchange.set_sandbox_mode(paper_mode)
@@ -34,3 +33,4 @@ def ejecutar_operacion(signal):
     except Exception as e:
         print("Error al ejecutar la orden:", str(e))
         return None
+
