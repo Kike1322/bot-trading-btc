@@ -11,46 +11,37 @@ print("Contenido de la carpeta actual:", os.listdir())
 #from alertas_email2 import enviar_alerta_email
 
 
-try:
-    capital = CapitalManager(20)
+capital = CapitalManager(20)
 
-    df = get_btc_data()
-    signal = generate_signal(df)
+df = get_btc_data()
+signal = generate_signal(df)
 
-    print(f"Señal generada: {signal}")
+print(f"Señal generada: {signal}")
 
-    orden = ejecutar_operacion(signal)
+orden = ejecutar_operacion(signal)
 
-    # Simula ganancia/pérdida
-    if signal == "buy":
-        beneficio = 50
-    elif signal == "sell":
-        beneficio = -30
-    else:
-        beneficio = 0
+if signal == "buy":
+    beneficio = 50
+elif signal == "sell":
+    beneficio = -30
+else:
+    beneficio = 0
 
-    g, r, reinv = capital.repartir_beneficio(beneficio)
+g, r, reinv = capital.repartir_beneficio(beneficio)
 
-    print(f"""
-    Capital actual: {capital.capital:.2f} USDT
-    Colchón: {capital.colchon:.2f} USDT
-    Ganancia retirada: {capital.beneficio_total:.2f} USDT
-    """)
+print(f"""
+Capital actual: {capital.capital:.2f} USDT
+Colchón: {capital.colchon:.2f} USDT
+Ganancia retirada: {capital.beneficio_total:.2f} USDT
+""")
 
-    log_trade(
-        signal=signal,
-        amount=0.001,
-        price=df.iloc[-1]["close"],
-        capital=capital.capital,
-        colchon=capital.colchon,
-        beneficio_total=capital.beneficio_total,
-        resultado=beneficio
-    )
+log_trade(
+    signal=signal,
+    amount=0.001,
+    price=df.iloc[-1]["close"],
+    capital=capital.capital,
+    colchon=capital.colchon,
+    beneficio_total=capital.beneficio_total,
+    resultado=beneficio
+)
 
-#except Exception as e:
-  #  enviar_alerta_email(
- #       asunto="Error crítico en Bot Trading",
- #       mensaje=f"Ha ocurrido un error: {e}",
-  #      to_email="kikecumpiandiaz@gmail.com"
-   # )
-   # raise
