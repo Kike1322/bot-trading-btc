@@ -35,13 +35,24 @@ Colchón: {capital.colchon:.2f} USDT
 Ganancia retirada: {capital.beneficio_total:.2f} USDT
 """)
 
+latest = df.iloc[-1]
+
 log_trade(
     signal=signal,
     amount=0.001,
-    price=df.iloc[-1]["close"],
+    price=latest["close"],
     capital=capital.capital,
     colchon=capital.colchon,
     beneficio_total=capital.beneficio_total,
-    resultado=beneficio
+    resultado=beneficio,
+    rsi=round(latest['rsi'], 2),
+    sma=round(latest['sma'], 2),
+    ema=round(latest['ema'], 2),
+    macd=round(latest['macd'], 6),
+    macd_signal=round(latest['macd_signal'], 6),
+    adx=round(latest['adx'], 2),
+    stoch_k=round(latest['stoch_k'], 2),
+    stoch_d=round(latest['stoch_d'], 2),
 )
+
 
