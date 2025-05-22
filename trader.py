@@ -6,7 +6,7 @@ def ejecutar_operacion(signal):
     api_secret = os.getenv("API_SECRET")
     paper_mode = os.getenv("PAPER_MODE", "True").lower() == "true"
 
-    exchange = ccxt.bybit({
+    exchange = ccxt.kraken({
         'apiKey': api_key,
         'secret': api_secret,
         'enableRateLimit': True,
